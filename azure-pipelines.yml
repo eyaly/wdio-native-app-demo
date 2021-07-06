@@ -1,0 +1,35 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+- task: CmdLine@2
+# Step 2 - check the apk was created
+  inputs:
+    script: |
+      echo "***** Start script ***** "
+      echo "ls"
+      ls
+      echo "***** End script ***** "
+
+- task: CmdLine@2
+# Step 3 - upload the apk to Sauce Storage
+  inputs:
+    script: 'curl -F "payload=@apps/android/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk" -F "name=Android.SauceLabs.Mobile.Sample.app.2.7.1.apk" -u "$(SAUCE_USERNAME):$(SAUCE_ACCESS_KEY)"  ''https://api.eu-central-1.saucelabs.com/v1/storage/upload'''
+
+
+- script: |
+    npm install
+    npm run test.android.sauce.real.eu
+  displayName: 'run suite on Android Sauce devices'
