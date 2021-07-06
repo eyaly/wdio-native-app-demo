@@ -19,8 +19,8 @@ steps:
   inputs:
     script: |
       echo "***** Start script ***** "
-      echo "ls"
-      ls
+      echo "ls -l apps"
+      ls -l apps
       echo "***** End script ***** "
 
 - task: CmdLine@2
