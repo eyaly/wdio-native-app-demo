@@ -13,14 +13,6 @@ describe('Login', () => {
     restartApp();
     LoginScreen.waitForIsShown();
 
-    // // Wait for the App to be opened
-    // $('~test-Login').waitForDisplayed();
-
-    // // Login in and wait for the items screen is visible
-    // $('~test-Username').addValue('standard_user');
-    // $('~test-Password').addValue('secret_sauce');
-    // $('~test-LOGIN').click();
-    // $('~test-PRODUCTS').waitForDisplayed();
   });
 
   it('should be able to login with a standard user', () => {

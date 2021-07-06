@@ -8,7 +8,7 @@ config.services = config.services.concat([
     'appium',
     {
       // This will use the globally installed version of Appium
-      command: 'appium',
+    //  command: 'appium',
     },
 
   ],

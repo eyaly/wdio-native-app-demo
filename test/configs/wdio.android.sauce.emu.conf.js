@@ -1,6 +1,6 @@
 const {config} = require('./wdio.shared.sauce.conf');
 
-config.maxInstances=2;
+//config.maxInstances=2;
 
 // ============
 // Capabilities
@@ -31,19 +31,19 @@ config.capabilities = [
         language: 'en',
         locale: 'en',
     },
-    {
-        deviceName: 'Samsung Galaxy S9 Plus HD GoogleAPI Emulator',
-        platformName: 'Android',
-        platformVersion: '8.1',
-        deviceOrientation: 'PORTRAIT',
-        appiumVersion: '1.20.1',
-        app: 'storage:filename=Android.SauceLabs.Mobile.Sample.app.2.7.1.apk',
-        appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
-        noReset: true,
-        newCommandTimeout: 240,
-        language: 'en',
-        locale: 'en',
-    },
+    // {
+    //     deviceName: 'Samsung Galaxy S9 Plus HD GoogleAPI Emulator',
+    //     platformName: 'Android',
+    //     platformVersion: '8.1',
+    //     deviceOrientation: 'PORTRAIT',
+    //     appiumVersion: '1.20.1',
+    //     app: 'storage:filename=Android.SauceLabs.Mobile.Sample.app.2.7.1.apk',
+    //     appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
+    //     noReset: true,
+    //     newCommandTimeout: 240,
+    //     language: 'en',
+    //     locale: 'en',
+    // },
 ];
 
 exports.config = config;
